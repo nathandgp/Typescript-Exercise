@@ -57,3 +57,11 @@ export const displayCityDirectory = () => {
 }
 
 //// ITEM 1 - endScript
+
+
+/// ITEM 2
+
+  
+var IsbnValidator = function(input) {
+    input = input.replace(/[^0-9X]/gi, '');
+}
