@@ -1,127 +1,58 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkCondition = exports.loopPlane = exports.displayWheels = exports.addWheel = exports.addWheels = exports.addPlane = exports.Days = exports.testFunction = void 0;
-const testFunction = () => {
-    console.log("Hello to Typescript");
-};
-exports.testFunction = testFunction;
-var parent;
-parent = "myString";
-parent = 500;
-var nameArray = [];
-var otherArray = new Array(10);
-nameArray.push("myName");
-otherArray.push("newName");
-var Days;
-(function (Days) {
-    Days[Days["Monday"] = 0] = "Monday";
-    Days[Days["Tuesday"] = 1] = "Tuesday";
-    Days[Days["Wednesday"] = 2] = "Wednesday";
-    Days[Days["Thursday"] = 3] = "Thursday";
-    Days[Days["Friday"] = 4] = "Friday";
-    Days[Days["Saturday"] = 5] = "Saturday";
-    Days[Days["Sunday"] = 6] = "Sunday";
-})(Days = exports.Days || (exports.Days = {}));
-function addPlane2(data) {
-}
-var planeList = [];
-const addPlane = (data) => {
-    planeList.push(data);
-};
-exports.addPlane = addPlane;
-var myWheels = [];
-const addWheels = (...wheelsArray) => {
-    wheelsArray.forEach((item) => {
+exports.displayCityDirectory = exports.addPopulation = exports.addPopulations = exports.addCountry = exports.addCountries = exports.addCity = exports.addCities = void 0;
+// ITEM 1: CITY DIRECTORY
+var cityName = [];
+const addCities = (...citiesArray) => {
+    citiesArray.forEach((item) => {
         console.log(item);
     });
 };
-exports.addWheels = addWheels;
-const addWheel = (wheel) => {
-    myWheels.push(wheel);
-    (0, exports.displayWheels)();
+exports.addCities = addCities;
+const addCity = (city) => {
+    cityName.push(city);
+    (0, exports.displayCityDirectory)();
 };
-exports.addWheel = addWheel;
-const displayWheels = () => {
-    let list = document.getElementById("wheelList");
+exports.addCity = addCity;
+var countryName = [];
+const addCountries = (...countriesArray) => {
+    countriesArray.forEach((item) => {
+        console.log(item);
+    });
+};
+exports.addCountries = addCountries;
+const addCountry = (country) => {
+    countryName.push(country);
+    (0, exports.displayCityDirectory)();
+};
+exports.addCountry = addCountry;
+var populationCount = [];
+const addPopulations = (...populationsArray) => {
+    populationsArray.forEach((item) => {
+        console.log(item);
+    });
+};
+exports.addPopulations = addPopulations;
+const addPopulation = (population) => {
+    populationCount.push(population);
+    (0, exports.displayCityDirectory)();
+};
+exports.addPopulation = addPopulation;
+//export const addDirectory = ()
+const displayCityDirectory = () => {
+    let list = document.getElementById("cityList");
     if (list) {
         while (list.hasChildNodes() && list.firstChild) {
             list.removeChild(list.firstChild);
         }
     }
-    myWheels.forEach((item) => {
+    cityName.forEach((item) => {
         if (list) {
-            let li = document.createElement("li");
-            li.innerText = item;
-            list.appendChild(li);
+            let cit = document.createElement("cit");
+            cit.innerText = item;
+            list.append(cit);
         }
     });
 };
-exports.displayWheels = displayWheels;
-//addWheels("small wheel", "medium wheel", "large wheel");
-const loopPlane = () => {
-    //forEach
-    planeList.forEach((item) => {
-        console.log("forEach");
-        console.log(item);
-    });
-    //map
-    planeList.map((item) => {
-        console.log("map");
-        console.log(item);
-    });
-    //for loop
-    for (let i = 0; i < planeList.length; i++) {
-        console.log("forLoop");
-        console.log(planeList[i]);
-    }
-    //while loop
-    // let i =0;
-    // while(i<planeList.length){
-    //     console.log("whileLoop")
-    //     console.log(planeList[i])
-    //     i++
-    // }
-    //enhanced for loop
-    for (let plane of planeList) {
-        console.log("enhanced for loop");
-        console.log(plane);
-    }
-    //with index enhanced
-    for (let ind in planeList) {
-        console.log("enhancedWithIndex");
-        console.log(planeList[ind]);
-    }
-};
-exports.loopPlane = loopPlane;
-const checkCondition = () => {
-    var condition = true;
-    var s = "first";
-    if (condition) {
-    }
-    else if (!condition) {
-    }
-    else {
-    }
-    switch (s) {
-        case "first":
-            break;
-        case "second":
-            break;
-        default:
-    }
-};
-exports.checkCondition = checkCondition;
-var tuple = ["myName", 1];
-var tuple2 = ["first", 1, 2];
-var plane1 = {
-    name: "JetLee",
-    model: "Fighterjet"
-};
-var plane2 = {
-    name: "JetLee",
-    model: "Fighterjet"
-};
-(0, exports.addPlane)(plane1);
-(0, exports.addPlane)(plane2);
-(0, exports.loopPlane)();
-(0, exports.testFunction)();
+exports.displayCityDirectory = displayCityDirectory;
+//// ITEM 1 - endScript
