@@ -22,9 +22,7 @@ interface Plane{
     fly?:(destination:string)=> string
 }
 
-
 function addPlane2(data:Plane){
-
 }
 
 var planeList: Plane[] = [];
@@ -32,18 +30,35 @@ export const addPlane = (data:Plane)=>{
     planeList.push(data)
 }
 
+var myWheels:string[]=[]; 
 export const addWheels = (...wheelsArray:string[]) => {
     wheelsArray.forEach((item) => {
         console.log(item)
     })
 }
 
-export const addWheels2 = (...wheelsArray:string[]) => {
-    wheelsArray.forEach((item) => {
-        console.log(item)
+export const addWheel = (wheel:string) => {
+   myWheels.push(wheel);
+   displayWheels();
+}
+
+export const displayWheels = () => {
+    let list = document.getElementById("wheelList");
+    if(list){
+        while(list.hasChildNodes() && list.firstChild){
+            list.removeChild(list.firstChild)
+        }
+    }
+    myWheels.forEach((item) => {    
+        if(list){
+            let li = document.createElement("li");
+            li.innerText = item
+            list.appendChild(li);
+        }
+
     })
 }
-addWheels("small wheel", "medium wheel", "large wheel");
+//addWheels("small wheel", "medium wheel", "large wheel");
 
 export const loopPlane = () => {
     //forEach

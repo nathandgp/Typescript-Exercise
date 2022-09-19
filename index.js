@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.checkCondition = exports.loopPlane = exports.addWheels2 = exports.addWheels = exports.addPlane = exports.Days = exports.testFunction = void 0;
+exports.checkCondition = exports.loopPlane = exports.displayWheels = exports.addWheel = exports.addWheels = exports.addPlane = exports.Days = exports.testFunction = void 0;
 const testFunction = () => {
     console.log("Hello to Typescript");
 };
@@ -29,19 +29,35 @@ const addPlane = (data) => {
     planeList.push(data);
 };
 exports.addPlane = addPlane;
+var myWheels = [];
 const addWheels = (...wheelsArray) => {
     wheelsArray.forEach((item) => {
         console.log(item);
     });
 };
 exports.addWheels = addWheels;
-const addWheels2 = (...wheelsArray) => {
-    wheelsArray.forEach((item) => {
-        console.log(item);
+const addWheel = (wheel) => {
+    myWheels.push(wheel);
+    (0, exports.displayWheels)();
+};
+exports.addWheel = addWheel;
+const displayWheels = () => {
+    let list = document.getElementById("wheelList");
+    if (list) {
+        while (list.hasChildNodes() && list.firstChild) {
+            list.removeChild(list.firstChild);
+        }
+    }
+    myWheels.forEach((item) => {
+        if (list) {
+            let li = document.createElement("li");
+            li.innerText = item;
+            list.appendChild(li);
+        }
     });
 };
-exports.addWheels2 = addWheels2;
-(0, exports.addWheels)("small wheel", "medium wheel", "large wheel");
+exports.displayWheels = displayWheels;
+//addWheels("small wheel", "medium wheel", "large wheel");
 const loopPlane = () => {
     //forEach
     planeList.forEach((item) => {
