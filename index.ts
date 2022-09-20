@@ -93,12 +93,11 @@ for(let i = 0; i <= 6; i++){
 /// ITEM 3
 console.log("\nItem#3: Change it up!");
 var str = "Cat30"
+var str2 = str.toLowerCase;
 var checkList = "AabcdEefghIijklmnOopqrstUuvwxy";
-//convert to next letter
-var newString = str.replace(/[a-z]/gi, s => checkList[checkList.indexOf(str.toLowerCase()) + 1])
-//convert case to lowercase or uppercase
+var newString = str.replace(/[a-z]/gi, s => checkList[checkList.indexOf(s.toLowerCase()) + 1 ])
 console.log("Original String: " + str)
-console.log("1st Altered String: " + newString)
+console.log("Altered String: " + newString)
 
 ///ITEM 4
 console.log("")
